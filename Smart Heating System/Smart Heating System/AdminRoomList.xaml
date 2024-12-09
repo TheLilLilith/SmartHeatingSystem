@@ -1,0 +1,98 @@
+﻿<UserControl x:Class="Smart_Heating_System.AdminRoomList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Smart_Heating_System"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="187*"/>
+            <RowDefinition Height="174*"/>
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="NullPanel" Visibility="Visible" Grid.Row="1" Margin="20">
+            <Image Source="Resources/error.png" Height="100" Margin="10" ></Image>
+            <TextBlock Text="В данном помещении отсутствуют устройства." FontSize="15" FontFamily="Open Sans Bold" HorizontalAlignment="Center"></TextBlock>
+        </StackPanel>
+        <ListBox x:Name="dbListBox"  SelectionChanged="dbListBox_SelectionChanged"  Style="{StaticResource MaterialDesignToolToggleFlatListBox}" Background="Transparent" Grid.Column="0" Grid.Row="0" HorizontalContentAlignment="Stretch" MouseEnter="dbListBox_MouseEnter" >
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem" BasedOn="{StaticResource MaterialDesignListBoxItem}">
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="True" >
+                            <Setter Property="Background" Value="#255295" />
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="FontFamily" Value="Open Sans Bold"/>
+
+                        </Trigger>
+                    </Style.Triggers>
+
+                    <Style.Resources>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                    </Style.Resources>
+                </Style>
+
+            </ListBox.ItemContainerStyle>
+            <ListBox.ItemTemplate>
+
+                <DataTemplate>
+                    <Grid Height="200" Width="200" Margin="20" ShowGridLines="False">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25*"/>
+
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20*"/>
+                            <RowDefinition Height="40*"/>
+                            <RowDefinition Height="20*"/>
+                        </Grid.RowDefinitions>
+
+                      
+                        <Image Grid.Column="1" Grid.Row="1" Height="100" Width="100" Source="Resources/home.png" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
+                        <TextBlock x:Name="NameBlock" Grid.Row="2" Text="{Binding НазваниеПомещения}"  FontSize="15" VerticalAlignment="Top" Grid.Column="0" HorizontalAlignment="Center" Margin="10"></TextBlock>
+
+                    </Grid>
+                    <DataTemplate.Triggers>
+
+                    </DataTemplate.Triggers>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+
+        </ListBox>
+
+        <ListBox x:Name="dbListBox2"  SelectionChanged="dbListBox2_SelectionChanged"  Style="{StaticResource MaterialDesignToolVerticalToggleListBox}" Background="Transparent" Grid.Row="1" HorizontalContentAlignment="Stretch" MouseEnter="dbListBox2_MouseEnter">
+
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Height="100" Width="Auto" Margin="40" ShowGridLines="False">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25*"/>
+                            <ColumnDefinition Width="25*"/>
+                            <ColumnDefinition Width="25*"/>
+                            <ColumnDefinition Width="25*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="{Binding Картинка}" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Height="75" Margin="10">
+                            <Image.ToolTip>
+                                <ToolTip Content="{Binding Вид}" />
+                            </Image.ToolTip>
+                        </Image>
+                        <StackPanel Grid.Column="1">
+                            <TextBlock Text="Помещение:" FontSize="15" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Right" Margin="10,5"></TextBlock>
+                            <TextBlock Text="Имя:" FontSize="15" VerticalAlignment="Top" Grid.Column="1" HorizontalAlignment="Right" Margin="10,5"></TextBlock>
+                            <TextBlock Text="Устройство:" FontSize="15" VerticalAlignment="Center" Grid.Column="1" HorizontalAlignment="Right" Margin="10,5"></TextBlock>
+                        </StackPanel>
+                        <StackPanel Grid.Column="2">
+                        <TextBlock Text="{Binding НазваниеПомещения}" FontFamily="Open Sans Bold" FontSize="15" VerticalAlignment="Bottom" Grid.Column="2" HorizontalAlignment="Left" Margin="10,5"></TextBlock>
+                            <TextBlock  Text="{Binding Имя}" FontSize="15" FontFamily="Open Sans Bold" VerticalAlignment="Top" Grid.Column="2" HorizontalAlignment="Left" Margin="10,5"></TextBlock>
+                            <TextBlock Text="{Binding НазваниеУстройства}" FontFamily="Open Sans Bold" FontSize="15" VerticalAlignment="Center" Grid.Column="2" HorizontalAlignment="Left" Margin="10,5"></TextBlock>
+                        </StackPanel>
+                        <Button Content="Редактировать" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center"></Button>
+                    </Grid>
+
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+
+        </ListBox>
+
+    </Grid>
+</UserControl>

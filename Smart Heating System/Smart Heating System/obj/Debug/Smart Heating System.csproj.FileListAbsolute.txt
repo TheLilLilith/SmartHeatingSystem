@@ -1,0 +1,52 @@
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\bin\Debug\Smart Heating System.exe.config
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\bin\Debug\Smart Heating System.exe
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\bin\Debug\Smart Heating System.pdb
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\Authorization.g.cs
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\App.g.cs
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\Smart Heating System_MarkupCompile.cache
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\Smart Heating System_MarkupCompile.lref
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\Authorization.baml
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\Smart Heating System.g.resources
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\Smart_Heating_System.Properties.Resources.resources
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\Smart Heating System.csproj.GenerateResource.cache
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\Smart Heating System.exe
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\Smart Heating System.pdb
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\bin\Debug\EntityFramework.dll
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\bin\Debug\EntityFramework.xml
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\Smart Heating System_Content.g.cs
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\Smart Heating System.csproj.CopyComplete
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\AuthorizationMenu.g.cs
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\AuthorizationMenu.baml
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\bin\Debug\MaterialDesignColors.dll
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\bin\Debug\MaterialDesignColors.pdb
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\App.baml
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\RegistrationMenu.g.cs
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\RegistrationMenu.baml
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\SHSMainWindow.g.cs
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\SHSMainWindow.baml
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\Smart Heating System.csprojAssemblyReference.cache
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\UserControlMenuItem.g.cs
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\UserControlMenuItem.baml
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\UserControlDashboard.g.cs
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\UserControlDashboard.baml
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\UserControlDeviceList.g.cs
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\UserControlDeviceList.baml
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\AdminUserList.g.cs
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\AdminUserList.baml
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\AdminAddDevice.g.cs
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\AdminAddDevice.baml
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\AdminRoomList.g.cs
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\AdminRoomList.baml
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\Smart Heating System.sourcelink.json
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\AdminNewDevice.g.cs
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\AdminNewDevice.baml
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\AdminDeviceAddList.g.cs
+C:\Users\MTE\source\repos\Smart Heating System\Smart Heating System\obj\Debug\AdminDeviceAddList.baml

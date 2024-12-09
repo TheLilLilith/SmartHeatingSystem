@@ -1,0 +1,42 @@
+﻿<Page x:Class="Smart_Heating_System.RegistrationMenu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:Smart_Heating_System"
+      mc:Ignorable="d" 
+      d:DesignHeight="390" d:DesignWidth="298"
+      Title="RegistrationMenu">
+    <materialDesign:DialogHost OverlayBackground="Transparent" x:Name="RootDialog">
+        <materialDesign:DialogHost.DialogContent>
+            <Grid Margin="50">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="DialogTextBlock" FontFamily="Open Sans Bold" Grid.Row="0" HorizontalAlignment="Center" Margin="0,10,0,0"></TextBlock>
+                <Button x:Name="OkButton" Background="#1F659E"  Width="200" Click="OkButton_Click" Style="{StaticResource MaterialDesignRaisedButton}" Content="ОК" Grid.Row="1" HorizontalAlignment="Center" Margin="0,10,0,0"></Button>
+                    
+                
+            </Grid>
+        </materialDesign:DialogHost.DialogContent>
+        <Grid>
+        
+        <StackPanel Grid.Row="0" Grid.RowSpan="2">
+
+                <TextBlock Text="Регистрация" HorizontalAlignment="Center" Foreground="Black"  FontFamily="Open Sans Bold" FontSize="25" ></TextBlock>
+                <TextBlock Text="Введите данные в поля ниже" Foreground="Black" FontFamily="Open Sans" FontSize="15" HorizontalAlignment="Center"></TextBlock>
+            <TextBox x:Name="NameTextBox" materialDesign:TextFieldAssist.UnderlineBrush="#1F659E"  materialDesign:HintAssist.Hint="Ваше имя" materialDesign:HintAssist.Foreground="#1F659E"  Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <TextBlock x:Name="NameValidation" Foreground="Red" Style="{StaticResource MaterialDesignOverlineTextBlock}"></TextBlock>
+                <TextBox x:Name="RLoginTextBox" materialDesign:TextFieldAssist.UnderlineBrush="#1F659E"  materialDesign:HintAssist.Hint="Логин" materialDesign:HintAssist.Foreground="#1F659E"  Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+                <TextBlock x:Name="LoginValidation" Foreground="Red" Style="{StaticResource MaterialDesignOverlineTextBlock}"></TextBlock>
+                <TextBox x:Name="PasswordTextBox" materialDesign:TextFieldAssist.UnderlineBrush="#1F659E"  materialDesign:HintAssist.Hint="Пароль" materialDesign:HintAssist.Foreground="#1F659E"   Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+                <TextBlock x:Name="PasswordValidation" Foreground="Red" Style="{StaticResource MaterialDesignOverlineTextBlock}"></TextBlock>
+                <TextBox x:Name="PasswordTextBox2" materialDesign:TextFieldAssist.UnderlineBrush="#1F659E"  materialDesign:HintAssist.Hint="Подтвердите пароль" materialDesign:HintAssist.Foreground="#1F659E"  Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+                <TextBlock x:Name="PasswordValidation2" Foreground="Red" Style="{StaticResource MaterialDesignOverlineTextBlock}"></TextBlock>
+                <Button x:Name="EnterButton" Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}" Click="EnterButton_Click"  Content="Подтвердить"  Margin="0,20" Background="#1F659E"></Button>
+        </StackPanel>
+    </Grid>
+    </materialDesign:DialogHost>
+</Page>

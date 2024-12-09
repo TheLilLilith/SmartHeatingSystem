@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SmartHeatingSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Отопление">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Вид" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Картинка" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Устройства" Relationship="Self.FK__Устройств__ВидОт__4D94879B" FromRole="Отопление" ToRole="Устройства" />
+  </EntityType>
+  <EntityType Name="Пользователь">
+    <Key>
+      <PropertyRef Name="Id_Пользователя" />
+    </Key>
+    <Property Name="Id_Пользователя" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Логин" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Пароль" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Имя" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Роль" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="УстройстваПомещения" Relationship="Self.FK__Устройств__Id_По__5441852A" FromRole="Пользователь" ToRole="УстройстваПомещения" />
+  </EntityType>
+  <EntityType Name="Помещение">
+    <Key>
+      <PropertyRef Name="Id_Помещения" />
+    </Key>
+    <Property Name="Id_Помещения" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="НазваниеПомещения" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="УстройстваПомещения" Relationship="Self.FK__Устройств__Id_По__534D60F1" FromRole="Помещение" ToRole="УстройстваПомещения" />
+  </EntityType>
+  <EntityType Name="Статистика">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Устройство" Type="Int32" />
+    <Property Name="СтатТемпературы" Type="Int32" />
+    <Property Name="СтатВоды" Type="Int32" />
+    <Property Name="СтатЭнергии" Type="Int32" />
+    <Property Name="Дата" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Устройства" Relationship="Self.FK__Статистик__Устро__571DF1D5" FromRole="Статистика" ToRole="Устройства" />
+  </EntityType>
+  <EntityType Name="Устройства">
+    <Key>
+      <PropertyRef Name="Id_Устройства" />
+    </Key>
+    <Property Name="Id_Устройства" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="НазваниеУстройства" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ВидОтопления" Type="Int32" />
+    <Property Name="Статус" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Температура" Type="Int32" Nullable="false" />
+    <Property Name="КоличествоВоды" Type="Int32" Nullable="false" />
+    <Property Name="КоличествоЭлЭнергии" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Отопление" Relationship="Self.FK__Устройств__ВидОт__4D94879B" FromRole="Устройства" ToRole="Отопление" />
+    <NavigationProperty Name="Статистика" Relationship="Self.FK__Статистик__Устро__571DF1D5" FromRole="Устройства" ToRole="Статистика" />
+    <NavigationProperty Name="УстройстваПомещения" Relationship="Self.FK__Устройств__Устро__52593CB8" FromRole="Устройства" ToRole="УстройстваПомещения" />
+  </EntityType>
+  <EntityType Name="УстройстваПомещения">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Устройство" Type="Int32" />
+    <Property Name="Id_Помещения" Type="Int32" />
+    <Property Name="Id_Пользователя" Type="Int32" />
+    <NavigationProperty Name="Пользователь" Relationship="Self.FK__Устройств__Id_По__5441852A" FromRole="УстройстваПомещения" ToRole="Пользователь" />
+    <NavigationProperty Name="Помещение" Relationship="Self.FK__Устройств__Id_По__534D60F1" FromRole="УстройстваПомещения" ToRole="Помещение" />
+    <NavigationProperty Name="Устройства" Relationship="Self.FK__Устройств__Устро__52593CB8" FromRole="УстройстваПомещения" ToRole="Устройства" />
+  </EntityType>
+  <Association Name="FK__Устройств__ВидОт__4D94879B">
+    <End Role="Отопление" Type="Self.Отопление" Multiplicity="0..1" />
+    <End Role="Устройства" Type="Self.Устройства" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Отопление">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Устройства">
+        <PropertyRef Name="ВидОтопления" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Устройств__Id_По__5441852A">
+    <End Role="Пользователь" Type="Self.Пользователь" Multiplicity="0..1" />
+    <End Role="УстройстваПомещения" Type="Self.УстройстваПомещения" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Пользователь">
+        <PropertyRef Name="Id_Пользователя" />
+      </Principal>
+      <Dependent Role="УстройстваПомещения">
+        <PropertyRef Name="Id_Пользователя" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Устройств__Id_По__534D60F1">
+    <End Role="Помещение" Type="Self.Помещение" Multiplicity="0..1" />
+    <End Role="УстройстваПомещения" Type="Self.УстройстваПомещения" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Помещение">
+        <PropertyRef Name="Id_Помещения" />
+      </Principal>
+      <Dependent Role="УстройстваПомещения">
+        <PropertyRef Name="Id_Помещения" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Статистик__Устро__571DF1D5">
+    <End Role="Устройства" Type="Self.Устройства" Multiplicity="0..1" />
+    <End Role="Статистика" Type="Self.Статистика" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Устройства">
+        <PropertyRef Name="Id_Устройства" />
+      </Principal>
+      <Dependent Role="Статистика">
+        <PropertyRef Name="Устройство" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Устройств__Устро__52593CB8">
+    <End Role="Устройства" Type="Self.Устройства" Multiplicity="0..1" />
+    <End Role="УстройстваПомещения" Type="Self.УстройстваПомещения" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Устройства">
+        <PropertyRef Name="Id_Устройства" />
+      </Principal>
+      <Dependent Role="УстройстваПомещения">
+        <PropertyRef Name="Устройство" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SmartHeatingSystemEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Отопление" EntityType="Self.Отопление" />
+    <EntitySet Name="Пользователь" EntityType="Self.Пользователь" />
+    <EntitySet Name="Помещение" EntityType="Self.Помещение" />
+    <EntitySet Name="Статистика" EntityType="Self.Статистика" />
+    <EntitySet Name="Устройства" EntityType="Self.Устройства" />
+    <EntitySet Name="УстройстваПомещения" EntityType="Self.УстройстваПомещения" />
+    <AssociationSet Name="FK__Устройств__ВидОт__4D94879B" Association="Self.FK__Устройств__ВидОт__4D94879B">
+      <End Role="Отопление" EntitySet="Отопление" />
+      <End Role="Устройства" EntitySet="Устройства" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Устройств__Id_По__5441852A" Association="Self.FK__Устройств__Id_По__5441852A">
+      <End Role="Пользователь" EntitySet="Пользователь" />
+      <End Role="УстройстваПомещения" EntitySet="УстройстваПомещения" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Устройств__Id_По__534D60F1" Association="Self.FK__Устройств__Id_По__534D60F1">
+      <End Role="Помещение" EntitySet="Помещение" />
+      <End Role="УстройстваПомещения" EntitySet="УстройстваПомещения" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Статистик__Устро__571DF1D5" Association="Self.FK__Статистик__Устро__571DF1D5">
+      <End Role="Устройства" EntitySet="Устройства" />
+      <End Role="Статистика" EntitySet="Статистика" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Устройств__Устро__52593CB8" Association="Self.FK__Устройств__Устро__52593CB8">
+      <End Role="Устройства" EntitySet="Устройства" />
+      <End Role="УстройстваПомещения" EntitySet="УстройстваПомещения" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

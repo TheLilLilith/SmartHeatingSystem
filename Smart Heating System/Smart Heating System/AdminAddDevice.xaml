@@ -1,0 +1,100 @@
+﻿<UserControl x:Class="Smart_Heating_System.AdminAddDevice"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:Smart_Heating_System"
+             xmlns:System="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             d:DesignHeight="450"  d:DesignWidth="800">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="50"/>
+            
+            <RowDefinition Height="100*"/>
+
+        </Grid.RowDefinitions>
+        <materialDesign:ColorZone Grid.Row="0" Background="#234270" VerticalAlignment="Stretch"  materialDesign:ShadowAssist.Darken="True"
+                                  HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch" Margin="0,0,0,49" Grid.RowSpan="2">
+            <TextBlock Text="Устройства" Foreground="White" FontFamily="Open Sans Bold" FontSize="50" Margin="70" VerticalAlignment="Center"/>
+        </materialDesign:ColorZone>
+        <Button Style="{DynamicResource MaterialDesignFloatingActionButton}"
+                Command="{x:Static materialDesign:Transitioner.MoveNextCommand}"
+                HorizontalAlignment="Left"
+                Background="#3485fa"
+                BorderBrush="#1F79FF"
+                IsEnabled="True"
+                VerticalAlignment="Bottom"
+                Grid.Row="0" Grid.RowSpan="2" Margin="20,0,0,18">
+            <materialDesign:PackIcon Kind="Add"/>
+        </Button>
+
+
+
+
+        <ListBox  x:Name="dbListBox" Style="{StaticResource MaterialDesignToolVerticalToggleListBox}" Background="Transparent" HorizontalContentAlignment="Stretch" Grid.Row="2" MouseEnter="dbListBox_MouseEnter" Margin="0,1,0,0"  >
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem" BasedOn="{StaticResource MaterialDesignListBoxItem}">
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="True" >
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="White" Offset="1"/>
+                                        <GradientStop Color="White" Offset="0"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                    <Style.Resources>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                    </Style.Resources>
+                </Style>
+            </ListBox.ItemContainerStyle>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Height="150" Width="Auto" Margin="40" ShowGridLines="False">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25*"/>
+                            <ColumnDefinition Width="25*"/>
+                            <ColumnDefinition Width="25*"/>
+                            <ColumnDefinition Width="25*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="{Binding Картинка}" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Height="75" Margin="10">
+                            <Image.ToolTip>
+                                <ToolTip Content="{Binding Вид}" />
+                            </Image.ToolTip>
+                        </Image>
+                        <StackPanel Grid.Column="1">
+                            <TextBlock Text="Модель:" FontSize="15" VerticalAlignment="Top" Grid.Column="1" HorizontalAlignment="Right" Margin="10,5"></TextBlock>
+                            <TextBlock Text="Статус:" FontSize="15" VerticalAlignment="Center" Grid.Column="1" HorizontalAlignment="Right" Margin="10,5"></TextBlock>
+                            <TextBlock Text="Температура:" FontSize="15" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Right" Margin="10,5"></TextBlock>
+                            <TextBlock Text="Вода:" FontSize="15" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Right" Margin="10,5"></TextBlock>
+                            <TextBlock Text="Электроэнергия:" FontSize="15" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Right" Margin="10,5"></TextBlock>
+                        </StackPanel>
+                        <StackPanel Grid.Column="2">
+                            <TextBlock  Text="{Binding НазваниеУстройства}" FontSize="15" FontFamily="Open Sans Bold" VerticalAlignment="Top" Grid.Column="2" HorizontalAlignment="Left" Margin="10,5"></TextBlock>
+                            <TextBlock Text="{Binding Статус}" FontFamily="Open Sans Bold" FontSize="15" VerticalAlignment="Center" Grid.Column="2" HorizontalAlignment="Left" Margin="10,5"></TextBlock>
+                            <TextBlock Text="{Binding Температура}" FontFamily="Open Sans Bold" FontSize="15" VerticalAlignment="Bottom" Grid.Column="2" HorizontalAlignment="Left" Margin="10,5"></TextBlock>
+                            <TextBlock Text="{Binding КоличествоВоды}" FontFamily="Open Sans Bold" FontSize="15" VerticalAlignment="Bottom" Grid.Column="2" HorizontalAlignment="Left" Margin="10,5"></TextBlock>
+                            <TextBlock Text="{Binding КоличествоЭлЭнергии}" FontFamily="Open Sans Bold" FontSize="15" VerticalAlignment="Bottom" Grid.Column="2" HorizontalAlignment="Left" Margin="10,5"></TextBlock>
+                        </StackPanel>
+                        <Button Content="Редактировать" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center"></Button>
+
+
+                        <Grid.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="#FFECECEC" RenderingBias="Quality" ShadowDepth="1"/>
+                        </Grid.Effect>
+                    </Grid>
+
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+    </Grid>
+
+</UserControl>

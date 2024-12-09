@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5d45188efaec4283861a008283067ab1" Name="Diagram1">
+        <EntityTypeShape EntityType="SmartHeatingSystemModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartHeatingSystemModel.Отопление" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartHeatingSystemModel.Пользователь" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartHeatingSystemModel.Помещение" Width="1.5" PointX="6" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartHeatingSystemModel.Статистика" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartHeatingSystemModel.Устройства" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartHeatingSystemModel.УстройстваПомещения" Width="1.5" PointX="8.25" PointY="3.875" IsExpanded="true" />
+        <AssociationConnector Association="SmartHeatingSystemModel.FK__Устройств__ВидОт__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartHeatingSystemModel.FK__Устройств__Id_По__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartHeatingSystemModel.FK__Устройств__Id_По__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartHeatingSystemModel.FK__Статистик__Устро__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="SmartHeatingSystemModel.FK__Устройств__Устро__52593CB8" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

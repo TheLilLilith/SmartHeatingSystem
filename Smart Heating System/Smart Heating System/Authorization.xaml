@@ -1,0 +1,94 @@
+﻿<Window x:Class="Smart_Heating_System.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Smart_Heating_System"
+        mc:Ignorable="d"
+         AllowsTransparency="True" 
+        WindowStyle="None" 
+        Background="Transparent" 
+        BorderThickness="2" 
+       
+        BorderBrush="Transparent"
+        Title="Авторизация" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" MouseDown="Window_MouseDown">
+    <materialDesign:DialogHost>
+        <materialDesign:DialogHost.DialogContent>
+            <Grid Margin="30">
+                <Grid.RowDefinitions>
+                    <RowDefinition>
+                    </RowDefinition>
+                    <RowDefinition>
+                    </RowDefinition>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" Grid.Row="0">
+                    <TextBlock Text="Выход" FontFamily="Open Sans Bold" HorizontalAlignment="Left" Margin="10" FontSize="20"></TextBlock>
+                </StackPanel>
+               
+                <StackPanel Orientation="Horizontal" Grid.Row="1">
+                    <TextBlock Text="Вы действительно хотите выйти?" Opacity="0.5" Margin="10,0" FontSize="15"/>
+                    <Button Content="Да" Foreground="#1F659E" Click="ExitButton_Click" Style="{StaticResource MaterialDesignFlatButton}" Margin="10,0 " VerticalAlignment="Stretch"></Button>
+                    <Button Content="Нет" Background="#1F659E" Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" VerticalAlignment="Stretch"></Button>
+                </StackPanel>
+                </Grid>
+        </materialDesign:DialogHost.DialogContent>
+    
+    <Grid ShowGridLines="False">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="380"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="298"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Rectangle RadiusY="11" RadiusX="11" Fill="White" Grid.ColumnSpan="2" RenderTransformOrigin="0.41,0.511" Grid.RowSpan="2">
+
+        </Rectangle>
+
+        <Rectangle Grid.Column="0" Grid.RowSpan="2">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#00C8C5" Offset="0.0" />
+                    <GradientStop Color="#1F659E" Offset="1.0" />
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+
+        </Rectangle>
+        <Image Grid.Column="0" Grid.RowSpan="2" Stretch="UniformToFill" Opacity="0.2" Source="Resources\Charts.jpeg"></Image>
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
+            <Image Source="Resources/HeatWhite.png" Margin="10,10" ></Image>
+            <TextBlock Text="Smart Heating System" FontFamily="Open Sans Bold" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Foreground="White"></TextBlock>
+        </StackPanel>
+        <Button  x:Name="BackButton" Click="BackButton_Click" Grid.Row="0" Grid.Column="1" Style="{StaticResource MaterialDesignIconForegroundButton}" HorizontalAlignment="Left" Margin="10,10,0,3" Height="Auto">
+            <materialDesign:PackIcon Kind="ArrowBack" Foreground="#1F659E"></materialDesign:PackIcon>
+        </Button>
+            
+        <StackPanel Orientation="Vertical" Grid.Column="1" Grid.RowSpan="2">
+
+            <materialDesign:DialogHost CloseOnClickAway="True" VerticalAlignment="Top" HorizontalAlignment="Right">
+                    <materialDesign:DialogHost.DialogContent>
+                        <Grid Margin="25"  VerticalAlignment="Bottom" HorizontalAlignment="Left">
+
+
+                           
+
+                        </Grid>
+                    </materialDesign:DialogHost.DialogContent>
+                </materialDesign:DialogHost>
+
+                <Button Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}" x:Name="ExitButton"   Foreground="#00C8C5" FontFamily="Open Sans Bold" FontSize="15" Margin="10" HorizontalAlignment="Right"  Style="{StaticResource MaterialDesignIconButton}">
+                    <materialDesign:PackIcon Kind="Close" Foreground="#1F659E"></materialDesign:PackIcon>
+                </Button>
+                <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Navigating="MainFrame_Navigating" HorizontalAlignment="Center" VerticalAlignment="Center"></Frame>
+            <Button x:Name="RegistrationButton" Click="RegistrationButton_Click"  Content="Или зарегистрируйтесь" Foreground="#1F659E" HorizontalAlignment="Center" VerticalAlignment="Bottom" Style="{StaticResource MaterialDesignFlatButton}"></Button>
+        </StackPanel>
+
+    </Grid>
+    </materialDesign:DialogHost>
+
+</Window>
